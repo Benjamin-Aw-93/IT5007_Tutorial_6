@@ -1,0 +1,27 @@
+scalar GraphQLDate
+
+type Customer {
+_id: ID!
+id: String!
+name: String!
+number: String!
+created: GraphQLDate!
+}
+
+input CustomerInputs {
+    name: String!
+    number: String!
+}
+
+
+type Query {
+    about: String!
+    custList: [Customer!]!
+}
+
+type Mutation {
+    setAboutMessage(message: String!): String
+    custAdd(cust: CustomerInputs!): Customer!
+    custDel(id: String!): Customer! 
+}
+
